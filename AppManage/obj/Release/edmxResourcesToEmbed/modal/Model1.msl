@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AppManageModelStoreContainer" CdmEntityContainer="AppManageEntities">
+    <EntitySetMapping Name="Apps">
+      <EntityTypeMapping TypeName="AppManageModel.Apps">
+        <MappingFragment StoreEntitySet="Apps">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="app_name" ColumnName="app_name" />
+          <ScalarProperty Name="app_image" ColumnName="app_image" />
+          <ScalarProperty Name="app_catalogId" ColumnName="app_catalogId" />
+          <ScalarProperty Name="app_exec_path" ColumnName="app_exec_path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Catalog">
+      <EntityTypeMapping TypeName="AppManageModel.Catalog">
+        <MappingFragment StoreEntitySet="Catalog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="catalog_name" ColumnName="catalog_name" />
+          <ScalarProperty Name="catlog_image_path" ColumnName="catlog_image_path" />
+          <ScalarProperty Name="catalog_desc" ColumnName="catalog_desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

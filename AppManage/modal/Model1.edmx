@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AppManageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Apps">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="app_name" Type="nvarchar" MaxLength="250" />
+          <Property Name="app_image" Type="nvarchar" MaxLength="250" />
+          <Property Name="app_catalogId" Type="int" />
+          <Property Name="app_exec_path" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Catalog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="catalog_name" Type="nvarchar" MaxLength="350" />
+          <Property Name="catlog_image_path" Type="nvarchar" MaxLength="250" />
+          <Property Name="catalog_desc" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityContainer Name="AppManageModelStoreContainer">
+          <EntitySet Name="Apps" EntityType="Self.Apps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Catalog" EntityType="Self.Catalog" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AppManageModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Apps">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="app_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="app_image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="app_catalogId" Type="Int32" />
+          <Property Name="app_exec_path" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Catalog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="catalog_name" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="catlog_image_path" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="catalog_desc" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="AppManageEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Apps" EntityType="Self.Apps" />
+          <EntitySet Name="Catalog" EntityType="Self.Catalog" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AppManageModelStoreContainer" CdmEntityContainer="AppManageEntities">
+          <EntitySetMapping Name="Apps">
+            <EntityTypeMapping TypeName="AppManageModel.Apps">
+              <MappingFragment StoreEntitySet="Apps">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="app_name" ColumnName="app_name" />
+                <ScalarProperty Name="app_image" ColumnName="app_image" />
+                <ScalarProperty Name="app_catalogId" ColumnName="app_catalogId" />
+                <ScalarProperty Name="app_exec_path" ColumnName="app_exec_path" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Catalog">
+            <EntityTypeMapping TypeName="AppManageModel.Catalog">
+              <MappingFragment StoreEntitySet="Catalog">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="catalog_name" ColumnName="catalog_name" />
+                <ScalarProperty Name="catlog_image_path" ColumnName="catlog_image_path" />
+                <ScalarProperty Name="catalog_desc" ColumnName="catalog_desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

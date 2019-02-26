@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AppManageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Apps">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="app_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="app_image" Type="nvarchar" MaxLength="250" />
+    <Property Name="app_catalogId" Type="int" />
+    <Property Name="app_exec_path" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Catalog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="catalog_name" Type="nvarchar" MaxLength="350" />
+    <Property Name="catlog_image_path" Type="nvarchar" MaxLength="250" />
+    <Property Name="catalog_desc" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityContainer Name="AppManageModelStoreContainer">
+    <EntitySet Name="Apps" EntityType="Self.Apps" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Catalog" EntityType="Self.Catalog" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

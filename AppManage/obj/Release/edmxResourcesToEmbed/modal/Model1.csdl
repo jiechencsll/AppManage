@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AppManageModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Apps">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="app_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="app_image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="app_catalogId" Type="Int32" />
+    <Property Name="app_exec_path" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Catalog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="catalog_name" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="catlog_image_path" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="catalog_desc" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="AppManageEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Apps" EntityType="Self.Apps" />
+    <EntitySet Name="Catalog" EntityType="Self.Catalog" />
+  </EntityContainer>
+</Schema>
